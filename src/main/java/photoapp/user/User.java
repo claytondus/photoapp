@@ -1,14 +1,17 @@
 package photoapp.user;
 
+import org.springframework.data.annotation.Id;
+
 public class User {
 	
-	private long id;
-	private String name;
-	private String password;
+	@Id
+	public String id;
 	
-	public User(long id, String name, String password) {
+	public String name;
+	public String password;
+	
+	public User(String name, String password) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.password = password;
 	} 
@@ -17,10 +20,10 @@ public class User {
 	{		
 	}
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {

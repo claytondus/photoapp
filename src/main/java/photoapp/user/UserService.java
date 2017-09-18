@@ -3,25 +3,24 @@ package photoapp.user;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 //Singleton service that can be injected
 @Service
 public class UserService {
 	
-	private List<User> users = Arrays.asList(
-			new User(123,"user","pass"),
-			new User(345,"user2","pass2")
-	);
+	@Autowired
+	private UserRepository userRepository;
 	
 	public List<User> getAllUsers()
 	{
-		return users;
+		return userRepository.findAll();
 	}
 	
-	public User getUserByID(long id)
+	public User getUserByName(String name)
 	{
-		return new User(123,"user","pass");
+		return userRepository.findByName(name);
 	}
 
 }

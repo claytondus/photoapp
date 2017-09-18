@@ -19,10 +19,10 @@ public class UserController {
 		return userService.getAllUsers();	
 	}
 	
-	@RequestMapping("/user/{id}")
-	public User getUserByID(@PathVariable long id)
+	@RequestMapping("/user/{name}")
+	public User getUserByName(@PathVariable String name)
 	{
-		return userService.getUserByID(id);
+		return userService.getUserByName(name);
 	}
 
 }

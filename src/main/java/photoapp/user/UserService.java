@@ -18,5 +18,10 @@ public class UserService {
 	{
 		return users;
 	}
+	
+	public User getUserByID(long id)
+	{
+		return new User(123,"user","pass");
+	}
 
 }

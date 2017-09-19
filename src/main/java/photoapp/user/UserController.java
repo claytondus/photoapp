@@ -13,13 +13,13 @@ public class UserController {
 	@Autowired //Needs to be injected
 	private UserService userService;
 	
-	@RequestMapping("/user")
+	@RequestMapping("/api/user")
 	public List<User> getAllUsers()
 	{
 		return userService.getAllUsers();	
 	}
 	
-	@RequestMapping("/user/{name}")
+	@RequestMapping("/api/user/{name}")
 	public User getUserByName(@PathVariable String name)
 	{
 		return userService.getUserByName(name);

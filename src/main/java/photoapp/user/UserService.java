@@ -13,17 +13,17 @@ public class UserService {
 	@Autowired
 	private UserRepository userRepository;
 	
-	public List<User> getAllUsers()
+	public List<ApplicationUser> getAllUsers()
 	{
 		return userRepository.findAll();
 	}
 	
-	public User getUserByName(String name)
+	public ApplicationUser getUserByName(String name)
 	{
 		return userRepository.findByName(name);
 	}
 	
-	public void saveUser(User user)
+	public void saveUser(ApplicationUser user)
 	{
 		userRepository.save(user);
 	}

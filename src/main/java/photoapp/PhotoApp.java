@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import photoapp.user.User;
+import photoapp.user.ApplicationUser;
 import photoapp.user.UserRepository;
 
 @SpringBootApplication //entry point class
@@ -19,8 +19,8 @@ public class PhotoApp {
 	public void initializeDB()
 	{
 		userRepository.deleteAll();
-		userRepository.save(new User("Alice","pass"));
-		userRepository.save(new User("Bob","pass"));
+		userRepository.save(new ApplicationUser("Alice","pass"));
+		userRepository.save(new ApplicationUser("Bob","pass"));
 	}
 	
     @Bean

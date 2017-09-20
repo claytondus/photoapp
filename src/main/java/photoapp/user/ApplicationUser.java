@@ -2,7 +2,7 @@ package photoapp.user;
 
 import org.springframework.data.annotation.Id;
 
-public class User {
+public class ApplicationUser {
 	
 	@Id
 	public String id;
@@ -10,13 +10,13 @@ public class User {
 	public String name;
 	public String password;
 	
-	public User(String name, String password) {
+	public ApplicationUser(String name, String password) {
 		super();
 		this.name = name;
 		this.password = password;
 	} 
 	
-	public User()
+	public ApplicationUser()
 	{		
 	}
 

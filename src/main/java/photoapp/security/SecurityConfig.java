@@ -29,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     static final Integer ENCODING_STRENGTH = 256;
     static final String SECURITY_REALM = "Sprinb Boot JWT Example Realm";
 
+    //Allows auth service to get User data from Mongo
     @Autowired
     private UserDetailsService userDetailsService;
 

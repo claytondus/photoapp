@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 
 import static java.util.Collections.emptyList;
 
+/*
+ * Allows auth to get user data from mongo
+ */
 @Service
 public class AppUserDetailsService implements UserDetailsService {
     

@@ -1,5 +1,9 @@
 package photoapp;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -19,8 +23,8 @@ public class PhotoApp {
 	public void initializeDB()
 	{
 		userRepository.deleteAll();
-		userRepository.save(new ApplicationUser("Alice","pass"));
-		userRepository.save(new ApplicationUser("Bob", "821f498d827d4edad2ed0960408a98edceb661d9f34287ceda2962417881231a"));
+		userRepository.save(new ApplicationUser("Alice","pass", new String[] {"user"}));
+		userRepository.save(new ApplicationUser("Bob", "821f498d827d4edad2ed0960408a98edceb661d9f34287ceda2962417881231a",new String[] {"user"}));
 	}
 	
     @Bean

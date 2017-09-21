@@ -38,6 +38,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManager();
     }
 
+	  /*
+	  / Sha256 encoding Currently Set for the Authentication Manager
+	 */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(userDetailsService)
@@ -51,8 +54,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/**").permitAll()
-                .antMatchers("/api/**").authenticated()
+                .antMatchers("/api/**").permitAll()
+                .antMatchers("/photo").authenticated()
                 .and()
                 .httpBasic()
                 .realmName(SECURITY_REALM)

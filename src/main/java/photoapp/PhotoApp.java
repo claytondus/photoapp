@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
 
 import photoapp.user.ApplicationUser;
 import photoapp.user.UserRepository;
@@ -20,7 +20,7 @@ public class PhotoApp {
 	{
 		userRepository.deleteAll();
 		userRepository.save(new ApplicationUser("Alice","pass"));
-		userRepository.save(new ApplicationUser("Bob","pass"));
+		userRepository.save(new ApplicationUser("Bob", "821f498d827d4edad2ed0960408a98edceb661d9f34287ceda2962417881231a"));
 	}
 	
     @Bean
@@ -31,8 +31,8 @@ public class PhotoApp {
        }
     
     @Bean
-    public BCryptPasswordEncoder bCryptPasswordEncoder() {
-        return new BCryptPasswordEncoder();
+    public ShaPasswordEncoder shaPasswordEncoder() {
+        return new ShaPasswordEncoder(256);
     }
 
 	public static void main(String[] args) {

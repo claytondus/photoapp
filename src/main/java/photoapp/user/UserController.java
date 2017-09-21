@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -18,7 +18,7 @@ public class UserController {
 	private UserService userService;
 	
 	@Autowired
-	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	private ShaPasswordEncoder shaPasswordEncoder;
 
 	public List<ApplicationUser> getAllUsers()
 	{
@@ -34,10 +34,12 @@ public class UserController {
 	/*
 	 * Store user with encrypted password
 	 */
-    @PostMapping("/sign-up")
-    public void signUp(@RequestBody ApplicationUser user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    @RequestMapping("/sign-up/{password}")
+    public String signUp(@PathVariable String password) {
+    	ApplicationUser user = userService.getUserByName("Bob");
+        user.setPassword(shaPasswordEncoder.encodePassword("newpass",""));
         userService.saveUser(user);
+        return "successful";
     }
 
 }

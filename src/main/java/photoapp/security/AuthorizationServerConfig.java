@@ -17,7 +17,7 @@ import java.util.Arrays;
 import static photoapp.security.SecurityConfig.SIGNING_KEY;
 
 /**
- * Created by nydiarra on 06/05/17.
+ * Authorization server is what you talk to to get a token
  */
 @Configuration
 @EnableAuthorizationServer

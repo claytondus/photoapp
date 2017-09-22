@@ -14,7 +14,9 @@
 - Sha256 Password Encoding
 - Set up an authorization server for JWT tokens
 - curl client:signingkey@localhost:3000/oauth/token -d grant_type=password -d username=user -d password=pwd returns a token
-- 
+- having trouble using the auth token - issue is described in this stack overflow response
+
+https://stackoverflow.com/questions/42822875/springboot-1-5-x-security-oauth2
 
 # Current State
 

@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
 import org.springframework.security.config.core.GrantedAuthorityDefaults;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import photoapp.user.ApplicationUser;
 import photoapp.user.UserRepository;

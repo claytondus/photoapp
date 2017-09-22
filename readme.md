@@ -1,14 +1,21 @@
 # Project Setup
 
-- install mongodb, npm, angular-cli, java 1.8
+- install mongodb, java 1.8
+- decided to use Thymeleaf for frontend
+
+# Structure
+
+- RestController returns JSON Object
+- Controller redirects to a view and uses models
 
 # Project Launch
 
 - sudo service mongod start
 - launch server using maven
-- npm start from front end directory (Angular app)
 
 # Security
+
+- Decided to strip out jwt business and just authenticate in a more normal way
 
 - https://medium.com/@nydiarra/secure-a-spring-boot-rest-api-with-json-web-token-reference-to-angular-integration-e57a25806c50
 - Sha256 Password Encoding

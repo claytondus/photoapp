@@ -18,6 +18,8 @@
 
 https://stackoverflow.com/questions/42822875/springboot-1-5-x-security-oauth2
 
+- appears to work, but oauth is overriding web security config so can't reach permitall endpoints - the tokens work though
+
 # Current State
 
 - working on security integration for JWT

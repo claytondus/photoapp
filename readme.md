@@ -29,7 +29,6 @@ https://stackoverflow.com/questions/42822875/springboot-1-5-x-security-oauth2
 
 # Current State
 
-- working on security integration for JWT
-- you can access /photo
-- need token for /api/**
-- trying to figure out how to use mongo for generating the token
+- security works fine for horse shoes and hand grenades
+- redirect to login page except for home page
+- need to make pages look much nicer...Bootstrap5

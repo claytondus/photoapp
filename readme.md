@@ -15,7 +15,7 @@
 
 # Security
 
-- Decided to strip out jwt business and just authenticate in a more normal way
+- Decided to strip out jwt business and use spring security default - passwords are still sha256 encrypted for new registered users
 
 - https://medium.com/@nydiarra/secure-a-spring-boot-rest-api-with-json-web-token-reference-to-angular-integration-e57a25806c50
 - Sha256 Password Encoding

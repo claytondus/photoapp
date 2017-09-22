@@ -2,6 +2,7 @@ package photoapp.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.DependsOn;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.oauth2.config.annotation.configurers.ClientDetailsServiceConfigurer;
 import org.springframework.security.oauth2.config.annotation.web.configuration.AuthorizationServerConfigurerAdapter;
@@ -21,6 +22,7 @@ import static photoapp.security.SecurityConfig.SIGNING_KEY;
  */
 @Configuration
 @EnableAuthorizationServer
+@DependsOn("tokenServices") //ensuring proper bean is used
 @EnableResourceServer //Authorization and resource server the same 
 public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdapter {
     static final String CLIEN_ID = "testjwtclientid";

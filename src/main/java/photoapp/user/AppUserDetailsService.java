@@ -7,7 +7,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import static java.util.Collections.emptyList;
 
 /*
  * Allows auth to get user data from mongo
@@ -17,6 +16,8 @@ public class AppUserDetailsService implements UserDetailsService {
     
 	@Autowired
 	private UserRepository applicationUserRepository;
+	
+	
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -24,6 +25,6 @@ public class AppUserDetailsService implements UserDetailsService {
         if (applicationUser == null) {
             throw new UsernameNotFoundException(username);
         }
-        return new User(applicationUser.getName(), applicationUser.getPassword(), emptyList());
+        return new User(applicationUser.getName(), applicationUser.getPassword(), applicationUser.getAuthorities());
     }
 }

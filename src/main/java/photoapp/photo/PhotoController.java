@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class PhotoController {
-	
+	 
 	@RequestMapping("/photo")
-	@PreAuthorize("hasAuthority('admin')")
+	@PreAuthorize("hasAuthority('ROLE_USER')")
 	public String hello() {
 		return "Hello from photo controller";
 	}

@@ -20,6 +20,7 @@ public class UserController {
 	@Autowired
 	private ShaPasswordEncoder shaPasswordEncoder;
 
+	@RequestMapping("/")
 	public List<ApplicationUser> getAllUsers()
 	{
 		return userService.getAllUsers();	

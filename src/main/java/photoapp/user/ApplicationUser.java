@@ -15,11 +15,11 @@ public class ApplicationUser {
 	public String password;
 	public List<GrantedAuthority> authorities;
 	
-	public ApplicationUser(String name, String password,String[] authorities) {
+	public ApplicationUser(String name, String password,String authorities) {
 		super();
 		this.name = name;
 		this.password = password;
-		this.authorities = AuthorityUtils.createAuthorityList(authorities);	} 
+		this.authorities = AuthorityUtils.commaSeparatedStringToAuthorityList(authorities);	} 
 	
 	public ApplicationUser()
 	{		

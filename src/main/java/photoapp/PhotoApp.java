@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
+import org.springframework.security.config.core.GrantedAuthorityDefaults;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
 import photoapp.user.ApplicationUser;
 import photoapp.user.UserRepository;
@@ -19,8 +21,9 @@ public class PhotoApp {
 	public void initializeDB()
 	{
 		userRepository.deleteAll();
-		userRepository.save(new ApplicationUser("Alice","pass", new String[] {"user"}));
-		userRepository.save(new ApplicationUser("Bob", "821f498d827d4edad2ed0960408a98edceb661d9f34287ceda2962417881231a",new String[] {"user"}));
+		//default pass is jwtpass
+		userRepository.save(new ApplicationUser("Alice","821f498d827d4edad2ed0960408a98edceb661d9f34287ceda2962417881231a","ROLE_USER"));
+		userRepository.save(new ApplicationUser("Bob", "821f498d827d4edad2ed0960408a98edceb661d9f34287ceda2962417881231a","ROLE_ADMIN,ROLE_USER"));
 	}
 	
     @Bean

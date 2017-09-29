@@ -19,6 +19,8 @@ https://springframework.guru/spring-boot-web-application-part-4-spring-mvc/
 
 # Security
 
+- Make sure to add any resource directories that need to be publicly accessible in SecurityConfig as permitAll() or else errors will occur
+
 - Decided to strip out jwt business and use spring security default - passwords are still sha256 encrypted for new registered users
 
 - https://medium.com/@nydiarra/secure-a-spring-boot-rest-api-with-json-web-token-reference-to-angular-integration-e57a25806c50
@@ -33,6 +35,7 @@ https://stackoverflow.com/questions/42822875/springboot-1-5-x-security-oauth2
 
 # Current State
 
+- have thymeleaf templates working
 - security works fine for horse shoes and hand grenades
 - redirect to login page except for home page
 - need to make pages look much nicer...Bootstrap5

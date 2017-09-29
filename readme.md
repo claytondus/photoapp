@@ -3,6 +3,10 @@
 - install mongodb, java 1.8
 - decided to use Thymeleaf for frontend
 
+# Good Tutorial for Thymeleaf
+
+https://springframework.guru/spring-boot-web-application-part-4-spring-mvc/
+
 # Structure
 
 - RestController returns JSON Object

@@ -40,6 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+    	//Have to do this for webjars to work
+    	//Otherwise it wines about js file having mime type text/html
     	http.authorizeRequests().antMatchers("/webjars/**").permitAll();
         http
         .authorizeRequests()

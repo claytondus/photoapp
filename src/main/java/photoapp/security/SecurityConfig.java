@@ -40,6 +40,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+    	//Have to do this for webjars or any folder needs to be accessible 
+    	//not logged in
+    	//Otherwise it wines about js file having mime type text/html
+    	http.authorizeRequests().antMatchers("/webjars/**").permitAll();
+    	http.authorizeRequests().antMatchers("/images/**").permitAll();
         http
         .authorizeRequests()
             .antMatchers("/", "/home").permitAll()
@@ -51,5 +56,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
         .logout()
             .permitAll();
+        
+        http.csrf().disable();
+        http.headers().frameOptions().disable();
     }
 }
